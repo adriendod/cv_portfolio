@@ -6,7 +6,7 @@ import { useWindowSize } from "hooks/useWindowSize";
 const HeroScene = () => {
   const windowSize = useWindowSize();
   const heroScene = useRef(null);
-  const whistleRef = useRef(null);
+  const computerRef = useRef(null);
   const gamepadRef = useRef(null);
   const cubeRef = useRef(null);
   const rocketRef = useRef(null);
@@ -17,7 +17,7 @@ const HeroScene = () => {
     const distanceFromMiddleX = e.clientX - pageMiddleX;
     const distanceFromMiddleY = e.clientY - pageMiddleY;
 
-    whistleRef.current.style.transform = `matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,${
+    computerRef.current.style.transform = `matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,${
       distanceFromMiddleX * -0.1
     },${distanceFromMiddleY * -0.1},0,1)`;
 
@@ -60,10 +60,10 @@ const HeroScene = () => {
         alt="gamepad"
       />
       <img
-        ref={whistleRef}
+        ref={computerRef}
         className="hero-whistle hero-picture"
         src="computer.png"
-        alt="whistle"
+        alt="computer"
       />
       <img
         ref={cubeRef}

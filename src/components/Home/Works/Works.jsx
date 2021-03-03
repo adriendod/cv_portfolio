@@ -8,8 +8,8 @@ const Works = () => (
   <div id="Works">
     <div className="column-container">
       <div className="pro-left column">
-        <img src="diamond-small.png" alt="pro" className="diamond" />
-        <h3>&gt; Freelance missions</h3>
+        <img src="computer.png" alt="pro" className="diamond" />
+        <h3>&gt; Career</h3>
         <p>
           Take a look at my CV and a detailed timeline of my former missions
         </p>

@@ -69,15 +69,15 @@
         box-shadow: 0px 0px 100px rgba(20, 2, 61, 0.2);
       }
 
-      .counter {
+      .project-image {
         width: 30%;
         font-size: 120px;
         font-weight: 700;
         font-family: "IBM Plex Sans";
       }
 
-      .content {
-        width: 55%;
+      .project-content {
+        width: 70%;
 
         .title {
           font-size: 64px;
@@ -87,33 +87,6 @@
           font-size: 18px;
           font-weight: 300;
           font-family: "IBM Plex Sans";
-        }
-      }
-
-      .see-more {
-        display: flex;
-        font-size: 14px;
-        white-space: nowrap;
-        width: 15%;
-
-        a {
-          color: #110b44;
-          text-decoration: none;
-
-          &:hover {
-            color: white;
-          }
-        }
-
-        .button {
-          padding: 15px 25px;
-          border-radius: 25px;
-          border: 1px solid #110b44;
-
-          &:hover {
-            border-color: #ed69d1;
-            background-color: #ed69d1;
-          }
         }
       }
     }
