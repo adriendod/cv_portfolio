@@ -1,0 +1,225 @@
+@import "mixins";
+
+#About-Page {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: auto;
+  flex-direction: column;
+  color: #2a2b56;
+  color: white;
+  width: 100%;
+  height: calc(490vh);
+  font-family: "IBM Plex Sans";
+
+  section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 90vh;
+
+    &.intro-text,
+    &.conclusion {
+      width: 100%;
+      height: 80vh;
+      background-color: white;
+    }
+
+    .robot-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 40%;
+      height: 100%;
+
+      .robot {
+        position: absolute;
+        height: 80%;
+        animation: 7s aboutRobot infinite;
+        z-index: 2;
+      }
+    }
+
+    .intro {
+      margin-top: 60px;
+      width: 30%;
+      padding: 15%;
+      color: #4447b3;
+      font-size: 14px;
+      z-index: 2;
+    }
+
+    &.conclusion {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 50vh;
+
+      .Social-Icons {
+        margin-bottom: 0px;
+      }
+
+      .conclusion-links {
+        display: flex;
+        margin-bottom: 80px;
+
+        a {
+          text-decoration: none;
+
+          &:first-child {
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes aboutRobot {
+    from {
+      top: 5%;
+    }
+    50% {
+      top: 10%;
+    }
+    to {
+      top: 5%;
+    }
+  }
+
+  .dot {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border-radius: 5px;
+  }
+
+  @keyframes rotateDots {
+    from {
+      margin-top: 0px;
+      transform: rotate(0deg);
+    }
+    50% {
+      margin-top: 15px;
+      transform: rotate(180deg);
+    }
+    to {
+      margin-top: 0px;
+      transform: rotate(360deg);
+    }
+  }
+
+  .pink-dot-top {
+    top: 25vh;
+    right: 5vw;
+    background-color: #f71919;
+    animation: 5s rotateDots infinite linear;
+  }
+
+  .blue-dot-top {
+    top: 20vh;
+    left: 5vw;
+    background-color: #74bff7;
+    animation: 5s rotateDots infinite;
+  }
+
+  .dark-blue-dot-medium {
+    top: 45vh;
+    left: 40vw;
+    background-color: #4447b3;
+    animation: 5s rotateDots infinite linear;
+  }
+
+  .big-stripes {
+    position: absolute;
+    width: 160px;
+    z-index: 0;
+    left: 10%;
+    top: 40%;
+    opacity: 0.7;
+  }
+
+  .medium-stripes {
+    position: absolute;
+    width: 120px;
+    z-index: 0;
+    bottom: 15%;
+    right: 0px;
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 700px) {
+    height: auto;
+
+    section .robot-wrapper {
+      display: none;
+    }
+
+    section .intro {
+      width: 60%;
+      padding: 0;
+    }
+
+    .big-stripes {
+      top: 0;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    section.intro-text {
+      height: auto;
+      padding: 50px 0;
+    }
+
+    section.conclusion {
+      height: 70vh;
+    }
+
+    section.conclusion .conclusion-links {
+      flex-direction: column;
+
+      a:first-child {
+        margin-right: 0;
+      }
+    }
+
+    section .intro {
+      width: 80%;
+    }
+  }
+
+  @media screen and (min-height: 1024px) {
+    height: 400vh;
+
+    section .robot-wrapper {
+      height: 80%;
+    }
+
+    .column.column-text .project-description {
+      max-width: 90%;
+    }
+
+    section.project-item {
+      height: 70vh;
+    }
+
+    .img-wrapper img {
+      height: 80%;
+    }
+  }
+
+  @media screen and (min-height: 1300px) {
+    height: 320vh;
+
+    section.project-item {
+      height: 50vh;
+    }
+
+    .img-wrapper img {
+      height: 80%;
+    }
+  }
+}

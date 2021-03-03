@@ -1,0 +1,181 @@
+@import "mixins";
+
+#Contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  margin-bottom: 350px;
+
+  .big-stripes {
+    position: absolute;
+    width: 250px;
+    z-index: 0;
+    left: 13%;
+    top: 40%;
+    opacity: 0.7;
+  }
+
+  .medium-stripes {
+    position: absolute;
+    width: 170px;
+    z-index: 0;
+    bottom: 15%;
+    right: -40px;
+    opacity: 0.7;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50%;
+    z-index: 2;
+    position: relative;
+    color: #4447b3;
+
+    .small-stripes {
+      position: absolute;
+      width: 110px;
+      z-index: 0;
+      top: 30px;
+      left: 200px;
+      opacity: 0.7;
+    }
+
+    h3 {
+      color: #f71919;
+      font-size: 60px;
+      margin-bottom: 10px;
+      margin-top: 0;
+      z-index: 1;
+    }
+
+    p {
+      font-family: "IBM Plex Sans";
+      max-width: 70%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .mailbox-1 {
+    position: absolute;
+    height: 120%;
+    left: 15%;
+    animation: 7s floatingMail infinite;
+    z-index: 2;
+  }
+
+  @keyframes floatingMail {
+    from {
+      bottom: -10%;
+    }
+    50% {
+      bottom: 0%;
+    }
+    to {
+      bottom: -10%;
+    }
+  }
+
+  .red-dot-top {
+    top: 15vh;
+    right: 5vw;
+    background-color: #f71919;
+    animation: 5s rotateDots infinite linear;
+  }
+
+  .red-dot-bottom {
+    top: 80vh;
+    left: 5vw;
+    background-color: #f71919;
+    animation: 2s rotateDots infinite;
+  }
+
+  .blue-dot-top {
+    top: 28vh;
+    left: 4vw;
+    background-color: #74bff7;
+    animation: 5s rotateDots infinite;
+  }
+
+  .blue-dot-medium {
+    top: 40vh;
+    right: 15vw;
+    background-color: #74bff7;
+    animation: 2s rotateDots infinite;
+  }
+
+  .dark-blue-dot-medium {
+    bottom: -20px;
+    left: 40vw;
+    background-color: #4447b3;
+    animation: 5s rotateDots infinite linear;
+    z-index: 4;
+  }
+
+  .dark-blue-dot-bottom {
+    bottom: 30vh;
+    right: 20vw;
+    background-color: #4447b3;
+    animation: 4s rotateDots infinite;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .dark-blue-dot-bottom {
+      bottom: 40vh;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .dark-blue-dot-bottom {
+      bottom: 42vh;
+    }
+
+    .mailbox-1 {
+      left: 5%;
+      height: auto;
+      width: 40%;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    .dark-blue-dot-medium,
+    .blue-dot-medium {
+      display: none;
+    }
+
+    .red-dot-top {
+      top: 1vh;
+    }
+
+    .container {
+      margin: 10%;
+      margin-bottom: 60%;
+    }
+
+    .mailbox-1 {
+      width: 60%;
+      left: 10%;
+    }
+
+    .big-stripes {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .container h3 {
+      font-size: 48px;
+    }
+
+    .container .small-stripes {
+      left: 150px;
+    }
+  }
+}

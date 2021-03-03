@@ -1,0 +1,205 @@
+@import "mixins";
+
+#Footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("/mesh-footer-small.png");
+  background-size: 100% 100%;
+  color: white;
+  width: 100vw;
+  overflow: hidden;
+
+  .container {
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 5%;
+      font-size: 42px;
+
+      a,
+      .language-select {
+        color: white;
+        text-decoration: none;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+
+      p {
+        cursor: pointer;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    .localisation {
+      margin-bottom: 20px;
+      font-size: 24px;
+
+      p {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .anchor {
+    position: absolute;
+    width: 20%;
+    bottom: 25%;
+    right: 15%;
+    animation: 10s floatingAnchor infinite;
+  }
+
+  @keyframes floatingAnchor {
+    from {
+      bottom: 30%;
+    }
+    50% {
+      bottom: 39%;
+    }
+    to {
+      bottom: 30%;
+    }
+  }
+
+  .terms {
+    position: absolute;
+    bottom: 5%;
+    right: 60px;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .small-stripes {
+    position: absolute;
+    width: 100px;
+    z-index: 0;
+    left: 5%;
+    top: 12%;
+    opacity: 0.7;
+  }
+
+  .medium-stripes {
+    position: absolute;
+    width: 250px;
+    z-index: 0;
+    right: -5%;
+    bottom: -5%;
+    opacity: 0.5;
+  }
+
+  @media screen and (max-width: 768px) {
+    background-size: 300vw 130vh;
+
+    .terms {
+      z-index: 1;
+    }
+
+    @keyframes floatingAnchor {
+      from {
+        bottom: 47%;
+      }
+      50% {
+        bottom: 42%;
+      }
+      to {
+        bottom: 47%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    background-size: 300vw 130vh;
+
+    .container {
+      margin-top: -50px;
+
+      .localisation {
+        font-size: 20px;
+        line-height: 32px;
+      }
+
+      .links a,
+      .links .language-select {
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
+
+    .small-stripes {
+      top: -2%;
+    }
+
+    .medium-stripes {
+      width: 220px;
+      right: -22%;
+    }
+
+    .anchor {
+      display: none;
+    }
+
+    .terms {
+      right: 0;
+      margin: 0 10%;
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .social-icons {
+      margin-bottom: 30px;
+    }
+
+    .container {
+      .localisation {
+        font-size: 16px;
+        margin-bottom: 0px;
+
+        p {
+          margin-bottom: 8px;
+          line-height: 19px;
+        }
+      }
+
+      .links a,
+      .links .language-select {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .small-stripes {
+      top: -4%;
+    }
+
+    .medium-stripes {
+      width: 150px;
+      right: -13%;
+      bottom: -2%;
+    }
+
+    .terms {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-height: 900px) {
+    height: 80vh;
+  }
+}

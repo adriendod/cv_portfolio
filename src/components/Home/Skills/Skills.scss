@@ -1,0 +1,269 @@
+@import "mixins";
+
+#Skills {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: auto;
+  margin: 300px 50px;
+  background-color: #d0e9ff;
+  background-image: url("/white_stripes_huge.svg");
+  background-size: 100% 100%;
+  background-position: center;
+  box-shadow: 15px 30px 10px rgba(50, 50, 93, 0.05);
+  border-radius: 20px;
+
+  .white-dot-medium {
+    top: 70vh;
+    right: 50vw;
+    background-color: white;
+    animation: 2s rotateDots infinite linear;
+    z-index: 3;
+  }
+
+  .white-dot-medium-top {
+    top: 8vh;
+    right: 40vw;
+    background-color: white;
+    animation: 5s rotateDots infinite;
+    z-index: 3;
+  }
+
+  .white-dot-left {
+    top: 40vh;
+    left: 2vw;
+    background-color: white;
+    animation: 2s rotateDots infinite linear;
+    z-index: 3;
+  }
+
+  .white-dot-right {
+    top: 25vh;
+    right: 5vw;
+    background-color: white;
+    animation: 5s rotateDots infinite;
+    z-index: 3;
+  }
+
+  .small-stripes {
+    position: absolute;
+    width: 120px;
+    z-index: 0;
+    bottom: 33%;
+    right: 15%;
+    opacity: 0.7;
+  }
+
+  .circle-hole {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    top: 30px;
+    right: 30px;
+    background-color: white;
+    box-shadow: inset 15px 30px 10px rgba(50, 50, 93, 0.05);
+  }
+
+  .title {
+    position: absolute;
+    font-size: 170px;
+    opacity: 1;
+    bottom: -3%;
+    right: 2%;
+    color: white;
+    z-index: 2;
+  }
+
+  .paint {
+    width: 50%;
+    position: absolute;
+    top: 5%;
+    right: 0%;
+    animation: 10s floatingPaint infinite;
+  }
+
+  .computer {
+    position: absolute;
+    left: 60%;
+    width: 40%;
+    top: 5%;
+    z-index: 0;
+    animation: 10s floatingComputer infinite;
+  }
+
+  .column {
+    position: relative;
+    color: #4447b3;
+    flex-direction: column;
+    width: 40%;
+    height: 95%;
+    z-index: 1;
+    padding: 30px 0;
+
+    .code-skills-list,
+    .design-skills-list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background-color: white;
+      box-shadow: 10px 10px 30px rgba(50, 50, 93, 0.15);
+      padding: 25px 20px;
+      border-radius: 15px;
+      max-width: 65%;
+      transition: 1s all ease;
+
+      &:hover {
+        margin-top: -20px;
+        box-shadow: 20px 20px 50px rgba(50, 50, 93, 0.3);
+      }
+
+      .skill {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-size: 14px;
+        font-family: "IBM Plex Sans";
+        z-index: 1;
+
+        .skill-label {
+          margin-left: 10px;
+          width: 100%;
+        }
+
+        .icon-wrapper {
+          @include flex;
+          height: 42px;
+          width: 50px;
+
+          i {
+            margin-right: 5px;
+            color: #15d0b5;
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
+
+    &:first-child {
+      margin-right: 5%;
+    }
+  }
+
+  @keyframes floatingComputer {
+    from {
+      top: 5%;
+      transform: rotate(10deg);
+    }
+    50% {
+      top: 0%;
+      transform: rotate(0deg);
+    }
+    to {
+      top: 5%;
+      transform: rotate(10deg);
+    }
+  }
+
+  @keyframes floatingPaint {
+    from {
+      top: 5%;
+      transform: rotate(-10deg);
+    }
+    50% {
+      top: 10%;
+      transform: rotate(0deg);
+    }
+    to {
+      top: 5%;
+      transform: rotate(-10deg);
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .title {
+      font-size: 110px;
+    }
+
+    .column {
+      .code-skills-list,
+      .design-skills-list {
+        max-width: 80%;
+      }
+    }
+
+    @keyframes floatingPaint {
+      from {
+        top: -3%;
+        transform: rotate(-10deg);
+      }
+      50% {
+        top: 2%;
+        transform: rotate(0deg);
+      }
+      to {
+        top: -3%;
+        transform: rotate(-10deg);
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 80px;
+      bottom: -1%;
+      right: 3%;
+    }
+
+    .white-dot-medium-top {
+      top: 5vh;
+      right: 45vw;
+    }
+
+    .column {
+      margin: 15px;
+      width: calc(100% - 30px);
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 150px 30px;
+
+    .column {
+      .code-skills-list,
+      .design-skills-list {
+        max-width: 100%;
+      }
+    }
+
+    .white-dot-medium,
+    .white-dot-right {
+      display: none;
+    }
+
+    .white-dot-left {
+      top: 82vh;
+      left: 15vw;
+    }
+
+    .title {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    margin: 150px 10px;
+    .white-dot-left {
+      top: 120vh;
+    }
+  }
+}
